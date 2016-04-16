@@ -1,0 +1,32 @@
+<h1>Flüge suchen!</h1>
+
+<div class="form-group">
+    
+    <label>Von:</label>
+    <input class="form-control" [(ngModel)]="von">
+    
+</div>
+
+
+<div class="form-group">
+    
+    <label>Nach:</label>
+    <input class="form-control" [(ngModel)]="nach">
+    
+</div>    
+
+<div class="form-group">
+    <button (click)="search()" class="btn btn-default">Suchen!</button>    
+</div>
+
+
+<table [hidden]="fluege.length == 0" class="table table-striped">
+    
+    <tr *ngFor="#flug of fluege">
+        <td>{{flug.id}}</td>
+        <td>{{flug.abflugort}}</td>
+        <td>{{flug.zielort}}</td>
+        <td>{{flug.datum.substr(0,10)}}</td>
+    </tr>
+     
+</table>    
